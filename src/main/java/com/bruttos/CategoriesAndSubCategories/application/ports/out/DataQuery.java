@@ -1,6 +1,6 @@
 package com.bruttos.CategoriesAndSubCategories.application.ports.out;
 
-import com.bruttos.BankAndAccountService.application.ports.out.base.DataCommandQuery;
+import com.bruttos.CategoriesAndSubCategories.application.ports.out.base.DataCommandQuery;
 
 import java.util.List;
 import java.util.UUID;

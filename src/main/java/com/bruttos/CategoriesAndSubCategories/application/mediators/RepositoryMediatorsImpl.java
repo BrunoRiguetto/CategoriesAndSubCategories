@@ -6,9 +6,11 @@ import com.bruttos.CategoriesAndSubCategories.application.ports.out.DataQuery;
 import com.bruttos.CategoriesAndSubCategories.application.ports.out.base.DataCommandQuery;
 import com.bruttos.CategoriesAndSubCategories.domain.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
+@Component
 public class RepositoryMediatorsImpl implements RepositoryMediator {
 
     private final HashMap<Class, DataCommandQuery> queries = new HashMap<>();
@@ -18,7 +20,7 @@ public class RepositoryMediatorsImpl implements RepositoryMediator {
             @Autowired DataQuery<Category> categoryQuery,
             @Autowired DataCommand<Category> categoryCommand) {
 
-        queries.put((Class) Category.class, (DataCommandQuery) categoryQuery);
+        queries.put(Category.class, categoryQuery);
 
         commands.put(Category.class, categoryCommand);
     }
